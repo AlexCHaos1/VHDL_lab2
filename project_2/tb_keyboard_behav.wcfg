@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_keyboard_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_keyboard" />
+            <top_module name="tb_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="999,999,993 ps"></ZoomStartTime>
+      <ZoomEndTime time="1,000,000,002 ps"></ZoomEndTime>
+      <Cursor1Time time="1,000,000,000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="202"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="30" />
+   <wvobject fp_name="/tb_keyboard/clk_delay" type="logic">
+      <obj_property name="ElementShortName">clk_delay</obj_property>
+      <obj_property name="ObjectShortName">clk_delay</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/tb_clk" type="logic">
+      <obj_property name="ElementShortName">tb_clk</obj_property>
+      <obj_property name="ObjectShortName">tb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_clk" type="logic">
+      <obj_property name="ElementShortName">kb_clk</obj_property>
+      <obj_property name="ObjectShortName">kb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_clk_gen" type="logic">
+      <obj_property name="ElementShortName">kb_clk_gen</obj_property>
+      <obj_property name="ObjectShortName">kb_clk_gen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/tb_rst" type="logic">
+      <obj_property name="ElementShortName">tb_rst</obj_property>
+      <obj_property name="ObjectShortName">tb_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/sys_rst" type="logic">
+      <obj_property name="ElementShortName">sys_rst</obj_property>
+      <obj_property name="ObjectShortName">sys_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/tb_sc" type="array">
+      <obj_property name="ElementShortName">tb_sc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_sc[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/tb_num" type="array">
+      <obj_property name="ElementShortName">tb_num[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_num[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/tb_seg_en" type="array">
+      <obj_property name="ElementShortName">tb_seg_en[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_seg_en[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_data_serial" type="logic">
+      <obj_property name="ElementShortName">kb_data_serial</obj_property>
+      <obj_property name="ObjectShortName">kb_data_serial</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/start_tb" type="logic">
+      <obj_property name="ElementShortName">start_tb</obj_property>
+      <obj_property name="ObjectShortName">start_tb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/read_mem_make_code" type="array">
+      <obj_property name="ElementShortName">read_mem_make_code[7:0]</obj_property>
+      <obj_property name="ObjectShortName">read_mem_make_code[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_make_code_rev" type="array">
+      <obj_property name="ElementShortName">kb_make_code_rev[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kb_make_code_rev[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_make_code" type="array">
+      <obj_property name="ElementShortName">kb_make_code[7:0]</obj_property>
+      <obj_property name="ObjectShortName">kb_make_code[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_all_code" type="array">
+      <obj_property name="ElementShortName">kb_all_code[32:0]</obj_property>
+      <obj_property name="ObjectShortName">kb_all_code[32:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/code_counter" type="array">
+      <obj_property name="ElementShortName">code_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">code_counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/get_new_code" type="logic">
+      <obj_property name="ElementShortName">get_new_code</obj_property>
+      <obj_property name="ObjectShortName">get_new_code</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/ready_to_shift" type="logic">
+      <obj_property name="ElementShortName">ready_to_shift</obj_property>
+      <obj_property name="ObjectShortName">ready_to_shift</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/shift_counter" type="array">
+      <obj_property name="ElementShortName">shift_counter[6:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_counter[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/start_kb_clk" type="logic">
+      <obj_property name="ElementShortName">start_kb_clk</obj_property>
+      <obj_property name="ObjectShortName">start_kb_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_clk_to_dut" type="logic">
+      <obj_property name="ElementShortName">kb_clk_to_dut</obj_property>
+      <obj_property name="ObjectShortName">kb_clk_to_dut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_data_to_dut" type="logic">
+      <obj_property name="ElementShortName">kb_data_to_dut</obj_property>
+      <obj_property name="ObjectShortName">kb_data_to_dut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_parity" type="logic">
+      <obj_property name="ElementShortName">kb_parity</obj_property>
+      <obj_property name="ObjectShortName">kb_parity</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/kb_code_mem" type="array">
+      <obj_property name="ElementShortName">kb_code_mem[0:1023][7:0]</obj_property>
+      <obj_property name="ObjectShortName">kb_code_mem[0:1023][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/INPUT_FILE" type="array">
+      <obj_property name="ElementShortName">INPUT_FILE[1:11]</obj_property>
+      <obj_property name="ObjectShortName">INPUT_FILE[1:11]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/OUTPUT_LED_FILE" type="array">
+      <obj_property name="ElementShortName">OUTPUT_LED_FILE[1:16]</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_LED_FILE[1:16]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/OUTPUT_SG_FILE" type="array">
+      <obj_property name="ElementShortName">OUTPUT_SG_FILE[1:15]</obj_property>
+      <obj_property name="ObjectShortName">OUTPUT_SG_FILE[1:15]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/sync_keyboard_inst/kb_data_sync" type="logic">
+      <obj_property name="ElementShortName">kb_data_sync</obj_property>
+      <obj_property name="ObjectShortName">kb_data_sync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/sync_keyboard_inst/kb_clk_sync" type="logic">
+      <obj_property name="ElementShortName">kb_clk_sync</obj_property>
+      <obj_property name="ObjectShortName">kb_clk_sync</obj_property>
+   </wvobject>
+</wave_config>
