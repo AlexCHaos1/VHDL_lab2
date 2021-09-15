@@ -12,6 +12,7 @@ entity sync_keyboard is
 	     clk : in std_logic; 
 	     kb_clk : in std_logic;
 	     kb_data : in std_logic;
+	     reset : in std_logic;
 	     kb_clk_sync : out std_logic;
 	     kb_data_sync : out std_logic
 	 );
@@ -24,9 +25,17 @@ signal kb_data_half_sync, kb_clk_half_sync: std_logic := '0'; --declare and inti
 
 begin 
 
-process(clk)
+process(clk,reset)
 begin
-if(clk='1' and clk'EVENT) then
+
+if(reset='1') then --reset the signals
+kb_data_half_sync<='0';
+kb_clk_half_sync<='0';
+kb_data_sync<='0';
+kb_data_sync<='0';
+end if;
+
+if(rising_edge(clk)) then
 
 kb_clk_half_sync <=kb_clk; --FF1
 kb_data_half_sync <=kb_data;

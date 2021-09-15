@@ -46,6 +46,7 @@ architecture keyboard_top_arch of keyboard_top is
     component sync_keyboard is
 	port (
 		 clk : in std_logic; 
+		 reset : in std_logic;
 		 kb_clk : in std_logic;
 		 kb_data : in std_logic;
 		 kb_clk_sync : out std_logic;
@@ -102,6 +103,7 @@ begin
     sync_keyboard_inst : sync_keyboard
     port map (
 		 clk => clk,
+	     reset=>rst,
 		 kb_clk => kb_clk,
 		 kb_data => kb_data,
 		 kb_clk_sync => kb_clk_sync,
