@@ -49,7 +49,8 @@ architecture tb_keyboard_arch of tb_keyboard is
 		 kb_clk	  : in std_logic;
 		 sc		  : out unsigned(7 downto 0);
 		 num	  : out unsigned(7 downto 0);
-		 seg_en	  : out unsigned(3 downto 0)
+		 seg_en	  : out unsigned(3 downto 0);
+		 controller_test : in unsigned(7 downto 0)
 	     );
     end component;
 
@@ -95,7 +96,8 @@ begin
 		 kb_clk => kb_clk_to_dut,
 		 sc => tb_sc,
 		 num => tb_num,
-		 seg_en => tb_seg_en
+		 seg_en => tb_seg_en,
+		 controller_test=>read_mem_make_code	 
 	     );
 
 

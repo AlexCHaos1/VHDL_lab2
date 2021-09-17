@@ -27,7 +27,8 @@ entity keyboard_top is
 	     kb_clk	  : in std_logic;
 	     sc		  : out unsigned(7 downto 0);
 	     num	  : out unsigned(7 downto 0);
-	     seg_en	  : out unsigned(3 downto 0)
+	     seg_en	  : out unsigned(3 downto 0);
+	     controller_test: in unsigned(7 downto 0)
 	 );
 end keyboard_top;
 
@@ -141,8 +142,10 @@ begin
     port map (
 		 clk => clk,
 		 rst => rst,
-		 valid_code => valid_scan_code,
-		 scan_code_in => scan_code,
+		 --valid_code => valid_scan_code,
+		-- scan_code_in => scan_code,
+	      valid_code => '1',
+		  scan_code_in=>controller_test ,
 		 code_to_display => code_to_display,
 		 seg_en => seg_en
 	     );
