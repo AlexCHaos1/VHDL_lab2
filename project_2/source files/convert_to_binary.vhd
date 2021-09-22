@@ -23,7 +23,31 @@ end convert_to_binary;
 
 architecture convert_to_binary_arch of convert_to_binary is
 begin
-
--- simple combinational logic using case statements (LUT) 
-
+process(scan_code_in)
+begin
+    case scan_code_in is
+        when "00010110" =>
+            binary_out <= "0001"; --1
+        when "00011110" => 
+            binary_out <= "0010"; --2
+        when "00100110" =>
+            binary_out <= "0011"; --3
+        when "00100101" =>
+            binary_out <= "0100"; --4
+        when "00101110" =>
+            binary_out <= "0101"; --5
+        when "00110110" =>
+            binary_out <= "0110"; --6
+        when "00111101" =>
+            binary_out <= "0111"; --7
+        when "00111110" =>
+            binary_out <= "1000"; --8
+        when "01000110" =>
+            binary_out <= "1001"; --9
+        when "01000101" =>
+            binary_out <= "0000"; --0
+        when others =>
+            binary_out <= "1010"; --E
+    end case;
+end process;
 end convert_to_binary_arch;

@@ -2,12 +2,12 @@
 2020.2
 Jun 10 2021
 20:04:57
-C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.srcs/sim_1/new/tb_keyboard.vhd,1631874633,vhdl,,,,tb_keyboard,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/binary_to_sg.vhd,1442325200,vhdl,,,,binary_to_sg,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_scancode.vhd,1442325200,vhdl,,,,convert_scancode,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_to_binary.vhd,1442325200,vhdl,,,,convert_to_binary,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.srcs/sim_1/new/tb_keyboard.vhd,1632258442,vhdl,,,,tb_keyboard,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/binary_to_sg.vhd,1632255582,vhdl,,,,binary_to_sg,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_scancode.vhd,1632307051,vhdl,,,,convert_scancode,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_to_binary.vhd,1632255581,vhdl,,,,convert_to_binary,,,,,,,,
 C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/edge_detector.vhd,1631804448,vhdl,,,,edge_detector,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd,1631875780,vhdl,,,,keyboard_ctrl,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd,1631871787,vhdl,,,,keyboard_top,,,,,,,,
-C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/sync_keyboard.vhd,1631865938,vhdl,,,,sync_keyboard,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd,1632314500,vhdl,,,,keyboard_ctrl,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd,1632259008,vhdl,,,,keyboard_top,,,,,,,,
+C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/sync_keyboard.vhd,1632259001,vhdl,,,,sync_keyboard,,,,,,,,
 C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/tb_pkg.vhd,1442325212,vhdl,C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.srcs/sim_1/new/tb_keyboard.vhd,,,tb_pkg,,,,,,,,

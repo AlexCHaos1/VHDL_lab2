@@ -27,8 +27,7 @@ entity keyboard_top is
 	     kb_clk	  : in std_logic;
 	     sc		  : out unsigned(7 downto 0);
 	     num	  : out unsigned(7 downto 0);
-	     seg_en	  : out unsigned(3 downto 0);
-	     controller_test: in unsigned(7 downto 0)
+	     seg_en	  : out unsigned(3 downto 0)
 	 );
 end keyboard_top;
 
@@ -47,9 +46,9 @@ architecture keyboard_top_arch of keyboard_top is
     component sync_keyboard is
 	port (
 		 clk : in std_logic; 
-		 reset : in std_logic;
 		 kb_clk : in std_logic;
 		 kb_data : in std_logic;
+		 rst : in std_logic;
 		 kb_clk_sync : out std_logic;
 		 kb_data_sync : out std_logic
 	     );
@@ -104,9 +103,9 @@ begin
     sync_keyboard_inst : sync_keyboard
     port map (
 		 clk => clk,
-	     reset=>rst,
 		 kb_clk => kb_clk,
 		 kb_data => kb_data,
+		 rst => rst,
 		 kb_clk_sync => kb_clk_sync,
 		 kb_data_sync => kb_data_sync
 	     );
@@ -142,10 +141,8 @@ begin
     port map (
 		 clk => clk,
 		 rst => rst,
-		 --valid_code => valid_scan_code,
-		-- scan_code_in => scan_code,
-	      valid_code => '1',
-		  scan_code_in=>controller_test ,
+		 valid_code => valid_scan_code,
+		 scan_code_in => scan_code,
 		 code_to_display => code_to_display,
 		 seg_en => seg_en
 	     );

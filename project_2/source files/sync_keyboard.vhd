@@ -12,7 +12,7 @@ entity sync_keyboard is
         clk : in std_logic;
         kb_clk : in std_logic;
         kb_data : in std_logic;
-        reset : in std_logic;
+        rst : in std_logic;
         kb_clk_sync : out std_logic;
         kb_data_sync : out std_logic
     );
@@ -25,9 +25,9 @@ architecture sync_keyboard_arch of sync_keyboard is
 
 begin
 
-process(clk,reset)
+process(clk,rst)
 begin
-if(reset='1') then --reset the signals
+if(rst='1') then --reset the signals
 kb_data_half_sync<='0';
 kb_clk_half_sync<='0';
 kb_data_sync<='0';
