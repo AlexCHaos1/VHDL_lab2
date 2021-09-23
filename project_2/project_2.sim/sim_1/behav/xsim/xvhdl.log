@@ -1,2 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/binary_to_sg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'binary_to_sg'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_scancode.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'convert_scancode'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_to_binary.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'convert_to_binary'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'keyboard_ctrl'

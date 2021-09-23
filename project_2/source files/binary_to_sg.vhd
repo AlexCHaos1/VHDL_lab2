@@ -52,6 +52,8 @@ process(binary_in)
                 sev_seg <= "10000000";
             when "1001" =>
                 sev_seg <= "10011000";
+             when "1111" =>
+                sev_seg <= "00000000";  --clear the display 
             when others =>
                 sev_seg <= "10000110";
         end case;

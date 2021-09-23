@@ -46,6 +46,8 @@ begin
             binary_out <= "1001"; --9
         when "01000101" =>
             binary_out <= "0000"; --0
+        when "00000000" =>
+            binary_out <= "1111"; --15 (used to clear the segment display)                           
         when others =>
             binary_out <= "1010"; --E
     end case;
