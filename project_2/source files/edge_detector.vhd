@@ -28,20 +28,21 @@ end edge_detector;
 
 architecture edge_detector_arch of edge_detector is
     signal kb_clk_reg:std_logic;
-begin
+    begin
     process(clk, rst, kb_clk_sync)
     begin
-        if rst = '1' then
-            kb_clk_reg <= '0';
-            edge_found <='0';
-        elsif falling_edge(clk) then
-            if kb_clk_reg > kb_clk_sync then
-                edge_found <='1';
-                kb_clk_reg<= kb_clk_sync;
+        
+      if rising_edge (clk) then
+            if rst = '1' then
+               kb_clk_reg <= '0';
+               edge_found <='0';
+            elsif kb_clk_reg > kb_clk_sync then
+                edge_found <='1';   
+                kb_clk_reg<= kb_clk_sync;           
             else
                 edge_found <='0';
                 kb_clk_reg<= kb_clk_sync;
-            end if;
+            end if;           
         end if;
     end process;
 

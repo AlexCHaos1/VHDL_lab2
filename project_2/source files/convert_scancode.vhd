@@ -30,42 +30,36 @@ architecture convert_scancode_arch of convert_scancode is
     signal edge_counter: unsigned(3 downto 0);
     signal edge_counter_next: unsigned(3 downto 0);
 
-begin
-    Shift_register: process(clk, rst, edge_found) -- Shifts the data register, and transfers the 8bit data part to scan_code_out
-    begin
-        if rst = '1' then
-            scan_code_out <= "00000000";
-            data_reg <="00000000000";
 
-        elsif rising_edge(clk) then
-            if (edge_found ='1') then
-                data_reg(10) <= serial_data;
-                data_reg(9) <= data_reg(10);
-                data_reg(8) <= data_reg(9);
-                data_reg(7) <= data_reg(8);
-                data_reg(6) <= data_reg(7);
-                data_reg(5) <= data_reg(6);
-                data_reg(4) <= data_reg(5);
-                data_reg(3) <= data_reg(4);
-                data_reg(2) <= data_reg(3);
-                data_reg(1) <= data_reg(2);
-                data_reg(0) <= data_reg(1);
-                scan_code_out <= data_reg(8 downto 1);
+begin
+    Shift_register: process(clk, rst, edge_found,data_reg) -- Shifts the data register, and transfers the 8bit data part to scan_code_out
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+               -- scan_code_out <= "00000000";
+                data_reg <="00000000000";          
+            elsif(edge_found='1') then                                                 
+              data_reg    <= shift_right(data_reg, 1); 
+                           data_reg(10) <= serial_data;         
+            end if;           
+      end if;
+    end process;
+    scan_code_out <= data_reg(8 downto 1);
+     
+    Binary_Counter:process(clk,rst,edge_found)--increases the edge counter by 1 when an edge has been found
+    begin
+
+        if rising_edge(clk) then
+            if rst = '1' then
+                edge_counter <="0000";
+            elsif  edge_found ='1' then
+                edge_counter<=edge_counter_next; --edge next is defined below
             end if;
         end if;
     end process;
 
-    Binary_Counter:process(clk,rst,edge_found)--increases the edge counter by 1 when an edge has been found
-    begin
-        if rst = '1' then
-            edge_counter <="0000";
-        elsif rising_edge(clk) and edge_found ='1' then
-            edge_counter<=edge_counter_next; --edge next is defined below
-        end if;
-    end process;
 
-
-    Valid_scancode_set_reset:  process(rst,edge_counter)
+    Valid_scancode_set_reset:  process(rst,edge_counter) --combinational
     begin
         if rst='1' then
             valid_scan_code<='0';
@@ -76,7 +70,7 @@ begin
                 edge_counter_next<="0000";
             else
                 valid_scan_code<='0';
-                edge_counter_next<=edge_counter +"1"; 
+                edge_counter_next<=edge_counter +"1";
             end if;
         end if;
     end process;

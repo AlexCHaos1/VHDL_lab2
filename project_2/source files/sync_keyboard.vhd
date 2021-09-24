@@ -25,21 +25,22 @@ architecture sync_keyboard_arch of sync_keyboard is
 
 begin
 
-process(clk,rst)
-begin
-if(rst='1') then --reset the signals
-kb_data_half_sync<='0';
-kb_clk_half_sync<='0';
-kb_data_sync<='0';
-kb_data_sync<='0';
-
-elsif(rising_edge(clk)) then
-
-kb_clk_half_sync <=kb_clk; --FF1
-kb_data_half_sync <=kb_data;
-kb_data_sync <=kb_data_half_sync; --FF2
-kb_clk_sync <=kb_clk_half_sync;
-end if;
-end process;
+    process(clk,rst)
+    begin
+        if(rising_edge(clk)) then
+            if(rst='1') then --reset the signals
+                kb_data_half_sync<='0';
+                kb_clk_half_sync<='0';
+                kb_data_sync<='0';
+                kb_data_sync<='0';
+                kb_clk_sync<='0';
+            else
+                kb_clk_half_sync <=kb_clk; --FF1
+                kb_data_half_sync <=kb_data;
+                kb_data_sync <=kb_data_half_sync; --FF2
+                kb_clk_sync <=kb_clk_half_sync;
+            end if;
+        end if;
+    end process;
 
 end sync_keyboard_arch;

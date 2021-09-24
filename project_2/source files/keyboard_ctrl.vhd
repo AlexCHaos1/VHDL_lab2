@@ -33,7 +33,8 @@ architecture keyboard_ctrl_arch of keyboard_ctrl is
     signal Break_code_recieved_buffer: std_logic;
     signal Key_code_recieved: std_logic;
     signal Key_code_register_enable: std_logic;
-    signal Key_code_register_out_1,Key_code_register_out_2,Key_code_register_out_3,Key_code_register_out_4 : unsigned(7 downto 0);
+    type Key_code_register is array (0 to 3) of unsigned(7 downto 0);
+    signal Key_code_register_array: Key_code_register;
     signal scan_code_in_buffer: unsigned(7 downto 0);
     signal Key_code_mux_out: unsigned(7 downto 0);
     signal seg_en_next: unsigned(3 downto 0);
@@ -74,12 +75,12 @@ begin
         end if;
     end process;
 
-    Key_code_enable: process(rst,Break_code_recieved_buffer,Key_code_register_out_1,Key_code_recieved)
+    Key_code_enable: process(rst,Break_code_recieved_buffer,Key_code_register_array(0),Key_code_recieved)
     begin
         if(rst='1') then
             Key_code_register_enable<='0';
         else
-            if (Key_code_register_out_1="00000000" and Key_code_recieved='1') then
+            if (Key_code_register_array(0)="00000000" and Key_code_recieved='1') then
                 Key_code_register_enable<='1';
             else
                 Key_code_register_enable<='0';
@@ -87,13 +88,13 @@ begin
         end if;
     end process;
 
-    Key_code_mux: process (rst,Key_code_register_enable,Key_code_recieved,Key_code_register_out_1,Break_code_recieved_buffer)
+    Key_code_mux: process (rst,scan_code_in ,Key_code_register_enable,Key_code_recieved,Key_code_register_array(0),Break_code_recieved_buffer)
     begin
         if(rst='1') then
             Key_code_mux_out<="00000000";
             Mux_new_output<='0';
         elsif Key_code_register_enable='0' and (Break_code_recieved_buffer='0' or Key_code_recieved='0' ) then
-            Key_code_mux_out<=Key_code_register_out_1;
+            Key_code_mux_out<=Key_code_register_array(0);
             Mux_new_output<='0';
         elsif (Key_code_register_enable='1')and (Break_code_recieved_buffer='0' or Key_code_recieved='0') then
             Key_code_mux_out<=scan_code_in;
@@ -110,61 +111,58 @@ begin
         end if;
     end process;
 
-    Segment_display_counter: process(rst,clk)
+    Segment_display_enable_shifter: process(rst,clk,seg_en_buffer)
     begin
-        if(rst='1') then
-            seg_en_buffer<="0000";
-        elsif rising_edge(clk) then
-            seg_en_buffer<=seg_en_next;
-            
-        end if;
-    end process;
-    seg_en<=seg_en_buffer;
+   
+   
+    if rising_edge(clk) then
+    if rst='1' then 
+    seg_en_buffer<="1000";
+    elsif rst='1' then 
+    seg_en_buffer<="1000";
+    seg_en_buffer(3)<= seg_en_buffer(0);
+    seg_en_buffer(2)<= seg_en_buffer(3);
+    seg_en_buffer(1)<= seg_en_buffer(2);
+    seg_en_buffer(0)<= seg_en_buffer(3);
+   end if;
+    end if;
+   end process ;
+   
+   seg_en<=seg_en_buffer;
+   
     
-    Segment_display_counter_wrap:  process(rst,seg_en_buffer)
+    Key_code_out_shift_array: process (rst,clk,Key_code_register_array(0))
     begin
-        if rst='1' then
-            seg_en_next<="0000";
-        else
-            if seg_en_next="0011" then
-                seg_en_next<="0000";
-            else
-                seg_en_next<=seg_en_buffer +"1";
-            end if;
-        end if;
-    end process;
-    
-    Key_code_out_shift_array: process (rst,clk,Key_code_register_out_1)
-    begin
-        if rst='1' then
-            Key_code_register_out_1<="00000000";
-            Key_code_register_out_2<="00000000";
-            Key_code_register_out_3<="00000000";
-            Key_code_register_out_4<="00000000";
-        elsif rising_edge(clk) then
-            if(Mux_new_output='1') then
-                Key_code_register_out_1<=Key_code_mux_out;
-                Key_code_register_out_2<=Key_code_register_out_1;
-                Key_code_register_out_3<=Key_code_register_out_2;
-                Key_code_register_out_4<=Key_code_register_out_3;
+        if rising_edge(clk) then
+         if rst='1' then
+                   Key_code_register_array(0)<="00000000";
+                   Key_code_register_array(1)<="00000000";
+                   Key_code_register_array(2)<="00000000";
+                   Key_code_register_array(3)<="00000000";
+        
+            elsif(Mux_new_output='1') then
+                Key_code_register_array(0)<=Key_code_mux_out;
+                Key_code_register_array(1)<=Key_code_register_array(0);
+                Key_code_register_array(2)<=Key_code_register_array(1);
+                Key_code_register_array(3)<=Key_code_register_array(2);
             end if;
         end if;
     end process;
 
-    code_to_display_mux: process(rst,clk,seg_en_buffer)
+    code_to_display_mux: process(rst,clk,seg_en_buffer,Key_code_register_array)
     begin
         if rst='1' then
             code_to_display<="00000000";
         else
             case seg_en_buffer is
-                when "0000" =>
-                    code_to_display<=Key_code_register_out_1;
                 when "0001" =>
-                    code_to_display<=Key_code_register_out_2;
+                    code_to_display<=Key_code_register_array(0);
                 when "0010" =>
-                    code_to_display<=Key_code_register_out_3;
-                when "0011" =>
-                    code_to_display<=Key_code_register_out_4;
+                    code_to_display<=Key_code_register_array(1);
+                when "0100" =>
+                    code_to_display<=Key_code_register_array(2);
+                when "1000" =>
+                    code_to_display<=Key_code_register_array(3);
                 when others =>
                     code_to_display<="00000000";
             end case;
