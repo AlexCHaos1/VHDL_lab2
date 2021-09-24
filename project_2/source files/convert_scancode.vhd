@@ -65,7 +65,7 @@ begin
             valid_scan_code<='0';
             edge_counter_next<="0000";
         else
-            if edge_counter="1010" then
+            if edge_counter="1011" then
                 valid_scan_code<='1';
                 edge_counter_next<="0000";
             else

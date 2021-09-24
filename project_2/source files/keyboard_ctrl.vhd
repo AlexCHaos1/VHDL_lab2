@@ -120,10 +120,9 @@ begin
     seg_en_buffer<="1000";
     elsif rst='1' then 
     seg_en_buffer<="1000";
-    seg_en_buffer(3)<= seg_en_buffer(0);
-    seg_en_buffer(2)<= seg_en_buffer(3);
-    seg_en_buffer(1)<= seg_en_buffer(2);
-    seg_en_buffer(0)<= seg_en_buffer(3);
+    else
+     seg_en_buffer    <= shift_right(seg_en_buffer, 1); 
+    seg_en_buffer(3) <= seg_en_buffer(0);         
    end if;
     end if;
    end process ;

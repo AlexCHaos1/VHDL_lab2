@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7.683334 us"></ZoomStartTime>
-      <ZoomEndTime time="78.583335 us"></ZoomEndTime>
-      <Cursor1Time time="19.500000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="139.200001 us"></ZoomEndTime>
+      <Cursor1Time time="54.500000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="261"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="224"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="66" />
+   <WVObjectSize size="68" />
    <wvobject fp_name="/tb_keyboard/clk_delay" type="logic">
       <obj_property name="ElementShortName">clk_delay</obj_property>
       <obj_property name="ObjectShortName">clk_delay</obj_property>
@@ -43,6 +43,14 @@
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/edge_detector_inst/edge_found" type="logic">
       <obj_property name="ElementShortName">edge_found</obj_property>
       <obj_property name="ObjectShortName">edge_found</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/convert_scancode_inst/edge_counter" type="array">
+      <obj_property name="ElementShortName">edge_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">edge_counter[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/convert_scancode_inst/valid_scan_code" type="logic">
+      <obj_property name="ElementShortName">valid_scan_code</obj_property>
+      <obj_property name="ObjectShortName">valid_scan_code</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/sync_keyboard_inst/kb_data" type="logic">
       <obj_property name="ElementShortName">kb_data</obj_property>
