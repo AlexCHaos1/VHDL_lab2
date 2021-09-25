@@ -31,6 +31,7 @@ architecture keyboard_ctrl_arch of keyboard_ctrl is
 
     signal Break_code_recieved: std_logic;
     signal Break_code_recieved_buffer: std_logic;
+    signal Break_code_recieved_buffer_next: std_logic;
     signal Key_code_recieved: std_logic;
     signal Key_code_register_enable: std_logic;
     type Key_code_register is array (0 to 3) of unsigned(7 downto 0);
@@ -67,13 +68,18 @@ begin
         if(rst='1') then
             Break_code_recieved_buffer<='0';
         elsif (rising_edge(clk)) then
-            if Break_code_recieved='1' then
-                Break_code_recieved_buffer<='1';
-            else
-                Break_code_recieved_buffer<='0';
-            end if;
+--            if Break_code_recieved='1' then
+--                Break_code_recieved_buffer<='1';
+--            else
+--                Break_code_recieved_buffer<='0';
+--            end if;
+            Break_code_recieved_buffer<=Break_code_recieved_buffer_next;
         end if;
     end process;
+    
+    Break_code_recieved_buffer_next<=Break_code_recieved when valid_code='1' else Break_code_recieved_buffer;
+
+
 
     Key_code_enable: process(rst,Break_code_recieved_buffer,Key_code_register_array(0),Key_code_recieved)
     begin
@@ -96,7 +102,7 @@ begin
         elsif Key_code_register_enable='0' and (Break_code_recieved_buffer='0' or Key_code_recieved='0' ) then
             Key_code_mux_out<=Key_code_register_array(0);
             Mux_new_output<='0';
-        elsif (Key_code_register_enable='1')and (Break_code_recieved_buffer='0' or Key_code_recieved='0') then
+        elsif (Key_code_register_enable='1')and (Break_code_recieved_buffer='0' and Key_code_recieved='1') then
             Key_code_mux_out<=scan_code_in;
             Mux_new_output<='1';
         elsif (Key_code_register_enable='0')and (Break_code_recieved_buffer='1' and Key_code_recieved='1') then

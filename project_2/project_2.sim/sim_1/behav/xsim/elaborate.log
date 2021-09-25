@@ -4,21 +4,4 @@ Running: D:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto f0a20c475d
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package ieee.std_logic_textio
-Compiling package xil_defaultlib.tb_pkg
-Compiling architecture sync_keyboard_arch of entity xil_defaultlib.sync_keyboard [sync_keyboard_default]
-Compiling architecture edge_detector_arch of entity xil_defaultlib.edge_detector [edge_detector_default]
-Compiling architecture convert_scancode_arch of entity xil_defaultlib.convert_scancode [convert_scancode_default]
-Compiling architecture keyboard_ctrl_arch of entity xil_defaultlib.keyboard_ctrl [keyboard_ctrl_default]
-Compiling architecture convert_to_binary_arch of entity xil_defaultlib.convert_to_binary [convert_to_binary_default]
-Compiling architecture binary_to_sg_arch of entity xil_defaultlib.binary_to_sg [binary_to_sg_default]
-Compiling architecture keyboard_top_arch of entity xil_defaultlib.keyboard_top [keyboard_top_default]
-Compiling architecture tb_keyboard_arch of entity xil_defaultlib.tb_keyboard
-Built simulation snapshot tb_keyboard_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
