@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="256.630000 us"></ZoomStartTime>
-      <ZoomEndTime time="291.830001 us"></ZoomEndTime>
-      <Cursor1Time time="280.930000 us"></Cursor1Time>
+      <ZoomStartTime time="68.633334 us"></ZoomStartTime>
+      <ZoomEndTime time="104.433335 us"></ZoomEndTime>
+      <Cursor1Time time="74.600000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="69" />
+   <WVObjectSize size="65" />
    <wvobject fp_name="/tb_keyboard/clk_delay" type="logic">
       <obj_property name="ElementShortName">clk_delay</obj_property>
       <obj_property name="ObjectShortName">clk_delay</obj_property>
@@ -204,45 +204,9 @@
       <obj_property name="ElementShortName">code_to_display[7:0]</obj_property>
       <obj_property name="ObjectShortName">code_to_display[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_register_enable" type="logic">
-      <obj_property name="ElementShortName">Key_code_register_enable</obj_property>
-      <obj_property name="ObjectShortName">Key_code_register_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_recieved" type="logic">
-      <obj_property name="ElementShortName">Key_code_recieved</obj_property>
-      <obj_property name="ObjectShortName">Key_code_recieved</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Break_code_recieved" type="logic">
-      <obj_property name="ElementShortName">Break_code_recieved</obj_property>
-      <obj_property name="ObjectShortName">Break_code_recieved</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Break_code_recieved_buffer" type="logic">
-      <obj_property name="ElementShortName">Break_code_recieved_buffer</obj_property>
-      <obj_property name="ObjectShortName">Break_code_recieved_buffer</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/scan_code_in" type="array">
       <obj_property name="ElementShortName">scan_code_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">scan_code_in[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_recieved" type="logic">
-      <obj_property name="ElementShortName">Key_code_recieved</obj_property>
-      <obj_property name="ObjectShortName">Key_code_recieved</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Break_code_recieved" type="logic">
-      <obj_property name="ElementShortName">Break_code_recieved</obj_property>
-      <obj_property name="ObjectShortName">Break_code_recieved</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Break_code_recieved_buffer" type="logic">
-      <obj_property name="ElementShortName">Break_code_recieved_buffer</obj_property>
-      <obj_property name="ObjectShortName">Break_code_recieved_buffer</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_register_enable" type="logic">
-      <obj_property name="ElementShortName">Key_code_register_enable</obj_property>
-      <obj_property name="ObjectShortName">Key_code_register_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_mux_out" type="array">
-      <obj_property name="ElementShortName">Key_code_mux_out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Key_code_mux_out[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/convert_to_binary_inst/binary_out" type="array">
       <obj_property name="ElementShortName">binary_out[3:0]</obj_property>
@@ -263,14 +227,6 @@
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/code_to_display" type="array">
       <obj_property name="ElementShortName">code_to_display[7:0]</obj_property>
       <obj_property name="ObjectShortName">code_to_display[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/seg_en_buffer" type="array">
-      <obj_property name="ElementShortName">seg_en_buffer[3:0]</obj_property>
-      <obj_property name="ObjectShortName">seg_en_buffer[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/Key_code_register_array" type="array">
-      <obj_property name="ElementShortName">Key_code_register_array[0:3][7:0]</obj_property>
-      <obj_property name="ObjectShortName">Key_code_register_array[0:3][7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/valid_code" type="logic">
       <obj_property name="ElementShortName">valid_code</obj_property>
@@ -295,5 +251,33 @@
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/convert_scancode_inst/scan_code_out" type="array">
       <obj_property name="ElementShortName">scan_code_out[7:0]</obj_property>
       <obj_property name="ObjectShortName">scan_code_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg1" type="array">
+      <obj_property name="ElementShortName">reg1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg2" type="array">
+      <obj_property name="ElementShortName">reg2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg3" type="array">
+      <obj_property name="ElementShortName">reg3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg4" type="array">
+      <obj_property name="ElementShortName">reg4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg4[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg_next" type="other">
+      <obj_property name="ElementShortName">reg_next</obj_property>
+      <obj_property name="ObjectShortName">reg_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg_current" type="other">
+      <obj_property name="ElementShortName">reg_current</obj_property>
+      <obj_property name="ObjectShortName">reg_current</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg_previous" type="other">
+      <obj_property name="ElementShortName">reg_previous</obj_property>
+      <obj_property name="ObjectShortName">reg_previous</obj_property>
    </wvobject>
 </wave_config>
