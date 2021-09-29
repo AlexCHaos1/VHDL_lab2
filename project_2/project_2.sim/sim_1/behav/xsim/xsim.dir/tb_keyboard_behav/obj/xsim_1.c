@@ -91,8 +91,8 @@ const int NumRelocateId= 31;
 void relocate(char *dp)
 {
 	iki_relocate(dp, "xsim.dir/tb_keyboard_behav/xsim.reloc",  (void **)funcTab, 31);
-	iki_vhdl_file_variable_register(dp + 20976);
-	iki_vhdl_file_variable_register(dp + 21032);
+	iki_vhdl_file_variable_register(dp + 20744);
+	iki_vhdl_file_variable_register(dp + 20800);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */

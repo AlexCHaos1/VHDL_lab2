@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Sep 28 14:12:08 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed Sep 29 10:10:32 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2021.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3247384" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "4dd0ee2c-2360-4d0e-9da2-5defe2432b24" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "f0a20c475d8d469fa912c5e82f6cf621" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "351" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "352" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD FX(tm)-8350 Eight-Core Processor           " -context "user_environment"
@@ -36,7 +36,7 @@ webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "27" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "14" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "2.30_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "71408_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2028264127 -regid "" -xml C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "2.25_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "71632_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 3564817586 -regid "" -xml C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/tb_keyboard_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

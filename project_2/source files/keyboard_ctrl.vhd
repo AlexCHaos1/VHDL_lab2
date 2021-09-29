@@ -39,17 +39,16 @@ begin
     Controller_clock: process(clk,valid_code)
     begin
         if(rst='1')then
-            reg_current<= makecode;
-            reg1<="00000000";
+            reg_current<= makecode; --reset the values
+            reg1<="00000000"; -- reg registers are used to store the pressed buttons (only 4 buttons can be stored)
             reg2<="00000000";
             reg3<="00000000";
             reg4<="00000000";
             counter<="00";
         elsif rising_edge(clk)then
-            reg_previous<=reg_current;
-            reg_current<=reg_next;
+            reg_current<=reg_next;  --(load the next keycode to the seven segment display
             counter <= counter_next;
-            if reg_current=break_makecode and valid_code='1'then
+            if reg_current=break_makecode and valid_code='1'then  --if a key has been pressed and then released, shift the registers and insert the new value
                 reg1<=scan_code_in;
                 reg2<=reg1;
                 reg3<=reg2;
@@ -60,25 +59,25 @@ begin
 
 
 
-    State_machine: process(reg_current,valid_code,scan_code_in)
+    State_machine: process(reg_current,valid_code,scan_code_in) --3 states, the sequence should go as: makecode->breakcode->breakmakecode
     begin
         case reg_current is
-            when makecode =>
-                if valid_code ='1' and scan_code_in="11110000"then
+            when makecode => 
+                if valid_code ='1' and scan_code_in="11110000"then  --check to see if a breakcode has been recieved
                     reg_next <= breakcode;
                 else
                     reg_next <= makecode;
                 end if;
             when breakcode =>
                 if valid_code ='1' then
-                 if scan_code_in="11110000"then
-                    reg_next <= breakcode;
-                else
-                    reg_next <=break_makecode;
+                    if scan_code_in="11110000"then
+                        reg_next <= breakcode;
+                    else
+                        reg_next <=break_makecode; --when the key is released we reviece the code for that key, this is a 3rd state, diffrent from a simple makecode
+                    end if;
                 end if;
-                end if;
-            when break_makecode =>
-                if valid_code ='1' and scan_code_in="11110000"then
+            when break_makecode => 
+                if valid_code ='1' and scan_code_in="11110000"then 
                     reg_next <= breakcode;
                 else
                     reg_next <=makecode;
@@ -87,7 +86,7 @@ begin
     end process;
 
 
-    Seg_driver: process(counter,reg1,reg2,reg3,reg4)
+    Seg_driver: process(counter,reg1,reg2,reg3,reg4) -- scans each 7-seg display with a shift register, changes the code to display, according to the register enabled
     begin
         counter_next <= counter + 1;
 
