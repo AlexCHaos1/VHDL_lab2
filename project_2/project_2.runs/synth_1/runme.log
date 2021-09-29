@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15112
+INFO: [Synth 8-7075] Helper process launched with PID 20016
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'keyboard_top' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd:34]
 INFO: [Synth 8-3491] module 'sync_keyboard' declared at 'C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/sync_keyboard.vhd:10' bound to instance 'sync_keyboard_inst' of component 'sync_keyboard' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd:103]
@@ -32,7 +32,7 @@ INFO: [Synth 8-638] synthesizing module 'convert_scancode' [C:/Users/Anestman/Do
 INFO: [Synth 8-256] done synthesizing module 'convert_scancode' (3#1) [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_scancode.vhd:27]
 INFO: [Synth 8-3491] module 'keyboard_ctrl' declared at 'C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd:17' bound to instance 'keyboard_ctrl_inst' of component 'keyboard_ctrl' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd:140]
 INFO: [Synth 8-638] synthesizing module 'keyboard_ctrl' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd:29]
-INFO: [Synth 8-226] default block is never used [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd:104]
+INFO: [Synth 8-226] default block is never used [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd:116]
 INFO: [Synth 8-256] done synthesizing module 'keyboard_ctrl' (4#1) [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_ctrl.vhd:29]
 INFO: [Synth 8-3491] module 'convert_to_binary' declared at 'C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_to_binary.vhd:17' bound to instance 'convert_to_binary_inst' of component 'convert_to_binary' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd:150]
 INFO: [Synth 8-638] synthesizing module 'convert_to_binary' [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/convert_to_binary.vhd:24]
@@ -42,17 +42,17 @@ INFO: [Synth 8-638] synthesizing module 'binary_to_sg' [C:/Users/Anestman/Docume
 INFO: [Synth 8-256] done synthesizing module 'binary_to_sg' (6#1) [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/binary_to_sg.vhd:30]
 INFO: [Synth 8-256] done synthesizing module 'keyboard_top' (7#1) [C:/Users/Anestman/Documents/VLSI_labs/project_2/source files/keyboard_top.vhd:34]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-802] inferred FSM for state register 'reg_current_reg' in module 'keyboard_ctrl'
@@ -65,7 +65,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'reg_current_reg' in module 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'reg_current_reg' using encoding 'sequential' in module 'keyboard_ctrl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -88,8 +88,8 @@ Detailed RTL Component Info :
 	   5 Input    4 Bit        Muxes := 1     
 	  12 Input    4 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -107,20 +107,20 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -138,37 +138,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -187,10 +187,10 @@ Report Cell Usage:
 |1     |BUFG |     1|
 |2     |LUT1 |     1|
 |3     |LUT2 |     9|
-|4     |LUT3 |     4|
-|5     |LUT4 |    11|
-|6     |LUT5 |     5|
-|7     |LUT6 |    30|
+|4     |LUT3 |     3|
+|5     |LUT4 |    13|
+|6     |LUT5 |     6|
+|7     |LUT6 |    28|
 |8     |FDRE |    56|
 |9     |IBUF |     4|
 |10    |OBUF |    20|
@@ -207,24 +207,24 @@ Report Instance Areas:
 |5     |  sync_keyboard_inst    |sync_keyboard    |     4|
 +------+------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1135.566 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1135.566 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1135.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1135.566 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 210409e3
+Synth Design complete, checksum: 3e93803d
 INFO: [Common 17-83] Releasing license: Synthesis
 33 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1135.852 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1135.566 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Anestman/Documents/VLSI_labs/project_2/project_2.runs/synth_1/keyboard_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file keyboard_top_utilization_synth.rpt -pb keyboard_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Sep 29 11:00:58 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 29 14:12:54 2021...
