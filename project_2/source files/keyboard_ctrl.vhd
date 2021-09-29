@@ -36,16 +36,19 @@ architecture keyboard_ctrl_arch of keyboard_ctrl is
 
 begin
 
-    Controller_clock: process(clk,valid_code)
+    Controller_clock: process(rst,clk,valid_code,reg_next )
     begin
+      
+      if rising_edge(clk)then
         if(rst='1')then
-            reg_current<= makecode; --reset the values
+            reg_current<= makecode; --reset the values    
+           -- reg_next<= makecode; --reset the values        
             reg1<="00000000"; -- reg registers are used to store the pressed buttons (only 4 buttons can be stored)
             reg2<="00000000";
             reg3<="00000000";
             reg4<="00000000";
             counter<="00";
-        elsif rising_edge(clk)then
+         else   
             reg_current<=reg_next;  --(load the next keycode to the seven segment display
             counter <= counter_next;
             if reg_current=break_makecode and valid_code='1'then  --if a key has been pressed and then released, shift the registers and insert the new value
@@ -55,12 +58,14 @@ begin
                 reg4<=reg3;
             end if;
         end if;
+        end if;
     end process;
-
-
+     
 
     State_machine: process(reg_current,valid_code,scan_code_in) --3 states, the sequence should go as: makecode->breakcode->breakmakecode
     begin
+        
+    
         case reg_current is
             when makecode => 
                 if valid_code ='1' and scan_code_in="11110000"then  --check to see if a breakcode has been recieved
@@ -69,12 +74,10 @@ begin
                     reg_next <= makecode;
                 end if;
             when breakcode =>
-                if valid_code ='1' then
-                    if scan_code_in="11110000"then
+                if valid_code ='1' and scan_code_in="11110000"then           
                         reg_next <= breakcode;
                     else
-                        reg_next <=break_makecode; --when the key is released we reviece the code for that key, this is a 3rd state, diffrent from a simple makecode
-                    end if;
+                        reg_next <=break_makecode; --when the key is released we reviece the code for that key, this is a 3rd state, diffrent from a simple makecode     
                 end if;
             when break_makecode => 
                 if valid_code ='1' and scan_code_in="11110000"then 
@@ -82,6 +85,12 @@ begin
                 else
                     reg_next <=makecode;
                 end if;
+           when others => 
+                if valid_code ='1' and scan_code_in="11110000"then
+                    reg_next <= breakcode;
+                else
+                    reg_next <=makecode;
+                end if;    
         end case;
     end process;
 

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1632487130">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1632906019">
   <File Type="PA-TCL" Name="keyboard_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="keyboard_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="keyboard_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="keyboard_top.vds"/>
   <File Type="RDS-UTIL" Name="keyboard_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="keyboard_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="keyboard_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="keyboard_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="keyboard_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/source files/binary_to_sg.vhd">
