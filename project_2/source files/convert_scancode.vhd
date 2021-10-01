@@ -27,6 +27,7 @@ end convert_scancode;
 architecture convert_scancode_arch of convert_scancode is
 
     signal data_reg: unsigned(10 downto 0);
+    signal data_shift: unsigned(10 downto 0);
     signal edge_counter: unsigned(3 downto 0);
     signal edge_counter_next: unsigned(3 downto 0);
 
@@ -36,42 +37,52 @@ begin
     begin
         if rising_edge(clk) then
             if rst = '1' then
-               -- scan_code_out <= "00000000";
-                data_reg <="00000000000";          
-            elsif(edge_found='1') then                                                 
-              data_reg    <= shift_right(data_reg, 1); 
-                           data_reg(10) <= serial_data;         
-            end if;           
-      end if;
+                data_reg <="00000000000";
+            else
+                data_reg<=data_shift;
+                data_reg(10) <= serial_data;
+            end if;
+        end if;
     end process;
+
     scan_code_out <= data_reg(8 downto 1);
-     
+
+
     Binary_Counter:process(clk,rst,edge_found)--increases the edge counter by 1 when an edge has been found
     begin
 
         if rising_edge(clk) then
             if rst = '1' then
-                edge_counter <="0000";
-            elsif  edge_found ='1' then
+                edge_counter <="0001";
+            else
                 edge_counter<=edge_counter_next; --edge next is defined below
             end if;
         end if;
     end process;
 
 
-    Valid_scancode_set_reset:  process(rst,edge_counter) --combinational
+    Valid_scancode_set_reset:  process(rst,edge_counter,data_reg,edge_found)--combinational
     begin
         if rst='1' then
             valid_scan_code<='0';
-            edge_counter_next<="0000";
+            edge_counter_next<="0001";
+            data_shift<="00000000000";
         else
-            if edge_counter="1011" then
-                valid_scan_code<='1';
-                edge_counter_next<="0001"; 
-            else
-                valid_scan_code<='0';
+
+            if( edge_found ='1') then
+                data_shift<=shift_right(data_reg, 1);
                 edge_counter_next<=edge_counter +"1";
+                valid_scan_code<='0';
+            elsif edge_counter="1011" then
+                valid_scan_code<='1';
+                edge_counter_next<="0000";
+
+            else
+                data_shift<=data_reg;
+                edge_counter_next<=edge_counter;
+                valid_scan_code<='0';
             end if;
+
         end if;
     end process;
 

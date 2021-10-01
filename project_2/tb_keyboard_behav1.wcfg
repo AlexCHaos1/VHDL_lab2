@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="259.600001 us"></ZoomEndTime>
-      <Cursor1Time time="6.000000 us"></Cursor1Time>
+      <ZoomStartTime time="2,045,010.500000 us"></ZoomStartTime>
+      <ZoomEndTime time="2,045,047.700001 us"></ZoomEndTime>
+      <Cursor1Time time="2,045,041.500000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="43" />
    <wvobject fp_name="/tb_keyboard/clk_delay" type="logic">
       <obj_property name="ElementShortName">clk_delay</obj_property>
       <obj_property name="ObjectShortName">clk_delay</obj_property>
@@ -132,20 +132,64 @@
       <obj_property name="ElementShortName">OUTPUT_SG_FILE[1:15]</obj_property>
       <obj_property name="ObjectShortName">OUTPUT_SG_FILE[1:15]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/scan_code_in" type="array">
-      <obj_property name="ElementShortName">scan_code_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">scan_code_in[7:0]</obj_property>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/edge_detector_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/valid_code" type="logic">
-      <obj_property name="ElementShortName">valid_code</obj_property>
-      <obj_property name="ObjectShortName">valid_code</obj_property>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/edge_detector_inst/kb_clk_sync" type="logic">
+      <obj_property name="ElementShortName">kb_clk_sync</obj_property>
+      <obj_property name="ObjectShortName">kb_clk_sync</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg_current" type="other">
       <obj_property name="ElementShortName">reg_current</obj_property>
       <obj_property name="ObjectShortName">reg_current</obj_property>
    </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/scan_code_in" type="array">
+      <obj_property name="ElementShortName">scan_code_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_code_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/convert_scancode_inst/edge_counter" type="array">
+      <obj_property name="ElementShortName">edge_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">edge_counter[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/valid_code" type="logic">
+      <obj_property name="ElementShortName">valid_code</obj_property>
+      <obj_property name="ObjectShortName">valid_code</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/edge_detector_inst/edge_found" type="logic">
+      <obj_property name="ElementShortName">edge_found</obj_property>
+      <obj_property name="ObjectShortName">edge_found</obj_property>
+   </wvobject>
    <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/code_to_display" type="array">
       <obj_property name="ElementShortName">code_to_display[7:0]</obj_property>
       <obj_property name="ObjectShortName">code_to_display[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/edge_detector_inst/kb_clk_reg" type="logic">
+      <obj_property name="ElementShortName">kb_clk_reg</obj_property>
+      <obj_property name="ObjectShortName">kb_clk_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg1" type="array">
+      <obj_property name="ElementShortName">reg1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg2" type="array">
+      <obj_property name="ElementShortName">reg2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg3" type="array">
+      <obj_property name="ElementShortName">reg3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg4" type="array">
+      <obj_property name="ElementShortName">reg4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg4[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/reg1_next" type="array">
+      <obj_property name="ElementShortName">reg1_next[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1_next[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_keyboard/keyboard_top_inst/keyboard_ctrl_inst/scan_code_in" type="array">
+      <obj_property name="ElementShortName">scan_code_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_code_in[7:0]</obj_property>
    </wvobject>
 </wave_config>
